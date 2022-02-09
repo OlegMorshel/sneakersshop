@@ -1,7 +1,7 @@
 import React from "react";
 import './basketright.scss';
 import {default as sneakers } from './../../img/collection/1.jpg'
-// import { default as clousebtn } from "./../";
+
 
 const BasketRight = () => {
 	return (
@@ -48,13 +48,22 @@ const BasketRight = () => {
               </svg>
             </div>
           </div>
+
           <div className="basket__bottom">
-            <div></div>
-            <div></div>
+            <div className="basket__bottom-total">
+              <span className="basket__bottom-character">Итого:</span>
+              <span className="basket__bottom-dashed"></span>
+              <p className="basket__bottom-price">21 498 руб.</p>
+            </div>
+            <div className="basket__bottom-total">
+              <span className="basket__bottom-character">Налог 5%:</span>
+              <span className="basket__bottom-dashed"></span>
+              <p className="basket__bottom-price">1074 руб.</p>
+            </div>
             <button className="basket__button mainBtn">
               Оформить заказ
               <svg
-							className="basket__button-arrow"
+                className="basket__button-arrow"
                 width="16"
                 height="14"
                 viewBox="0 0 16 14"
