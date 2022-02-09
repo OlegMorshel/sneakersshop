@@ -1,9 +1,8 @@
 import React from "react";
-import { default as snekImg } from "./../../img/collection/1.jpg";
-import './Card.scss';
+import "./Card.scss";
 
-const Card = () => {
-	return (
+const Card = (props) => {
+  return (
     <>
       <div className="collection__item">
         <div className="collection__item-wrapper">
@@ -24,18 +23,13 @@ const Card = () => {
           </button>
           <img
             className="collection__sneakers"
-            width="130"
-            heigth="110"
-            src={snekImg}
             alt="sneakers"
           />
-          <p className="collection__product">
-            Мужские Кроссовки Nike Blazer Mid Suede
-          </p>
+          <p className="collection__product">{props.name}</p>
           <div className="collection__product-bottom">
             <div>
               <p className="collection__price">Цена</p>
-              <span className="collection__count">12 999 руб.</span>
+              <span className="collection__count">{props.price} руб.</span>
             </div>
             <button className="collection__add-btn">
               <svg
@@ -65,6 +59,6 @@ const Card = () => {
       </div>
     </>
   );
-}
+};
 
 export default Card;

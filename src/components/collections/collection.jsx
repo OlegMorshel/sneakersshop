@@ -1,7 +1,39 @@
 import React from "react";
 import "./collections.scss";
 import { default as search } from "./../../img/collection/search.svg";
+import { default as jpg1 } from "./../../img/collection/1.jpg";
 import Card from "../card/Card";
+
+const sneakers = [
+  {
+    img: {
+      image: { jpg1 },
+    },
+    name: "Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12 999",
+  },
+  {
+    url: "./../../img/collection/1.jpg",
+    name: " Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12 999",
+  },
+  {
+    url: "./../../img/collection/1.jpg",
+    name: " Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12 999",
+  },
+  {
+    url: "./../../img/collection/1.jpg",
+    name: " Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12 999",
+  },
+  {
+    url: "./../../img/collection/1.jpg",
+    name: " Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12 999",
+  },
+];
+
 const Collections = () => {
   return (
     <>
@@ -18,11 +50,14 @@ const Collections = () => {
           </div>
         </div>
         <div className="collection__wrapper">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {sneakers.map((el, index) => (
+            <Card
+              
+              name={el.name}
+              price={el.price}
+              key={index}
+            />
+          ))}
         </div>
       </div>
     </>
