@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-### It is a [link]("https://olegmorshel.github.io/sneakersshop/") for opening project...
+It is a [link](https://olegmorshel.github.io/sneakersshop/) for opening project...
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
