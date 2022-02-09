@@ -1,0 +1,47 @@
+.header {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px;
+		border-bottom: 1px solid #EAEAEA;
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 15px;
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  &__subtitle {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #9d9d9d;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    margin-right: 30px;
+  }
+  &__basket {
+    margin-right: 10px;
+  }
+  &__price {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #5c5c5c;
+  }
+}
