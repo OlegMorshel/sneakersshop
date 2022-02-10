@@ -4,7 +4,7 @@ import { default as basket } from "./../../img/header/basket.svg";
 import { default as heart } from "./../../img/header/heart.svg";
 import { default as profile } from "./../../img/header/profile.svg";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <header className={styles.header}>
@@ -23,7 +23,7 @@ const Header = () => {
           </div>
           <div className={styles.header__profile}>
             <ul className={styles.header__list}>
-              <li className={styles.header__item}>
+              <li className={styles.header__item} onClick={props.openDrawer}>
                 <img className={styles.header__basket} width="18" height="18" src={basket} alt="basket" />
                 <span className={styles.header__price}>1205 руб.</span>
               </li>

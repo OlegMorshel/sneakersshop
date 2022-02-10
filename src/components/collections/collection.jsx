@@ -1,42 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./collections.module.scss";
 import { default as search } from "./../../img/collection/search.svg";
 import Card from "../card/Card";
-import {default as image1} from './../../img/collection/1.jpg';
-import {default as image2} from './../../img/collection/2.jpg';
-import {default as image3} from './../../img/collection/3.jpg';
-import {default as image4} from './../../img/collection/4.jpg';
-import {default as image5} from './../../img/collection/5.jpg';
+import Preloader from "../other/Preloader";
 
-const sneakers = [
-  {
-    url: image1,
-    name: "Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12 999",
-  },
-  {
-    url: image2,
-    name: " Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12 999",
-  },
-  {
-    url: image3,
-    name: " Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12 999",
-  },
-  {
-    url: image4,
-    name: " Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12 999",
-  },
-  {
-    url: image5,
-    name: " Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12 999",
-  },
-];
+
+
+
+
 
 const Collections = () => {
+
+  const [items, setItems] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
+
+  useEffect(()=>{
+    setIsFetching(true);
+
+    fetch("https://6204c14dc6d8b20017dc36cf.mockapi.io/sneakers").then(
+        res => res.json()
+    ).then(res => setItems(res))
+
+    setIsFetching(false);
+  }, [])
   return (
     <>
       <div className={styles.collection}>
@@ -51,11 +37,15 @@ const Collections = () => {
             />
           </div>
         </div>
+
         <div className={styles.collection__wrapper}>
-          {sneakers.map((el, index) => (
-            <Card
-              url={el.url}
-              name={el.name}
+          {
+            isFetching ? <Preloader/>
+
+            :items.map((el, index) => (
+                <Card
+              url={el.image}
+              name={el.title}
               price={el.price}
               key={index}
             />

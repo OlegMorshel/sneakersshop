@@ -25,12 +25,32 @@
     overflow-y: auto;
     text-align: justify;
   }
+  &__top_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__close_btn{
+
+    cursor: pointer;
+    &:hover{
+      rect {
+        fill: rgba(0, 0, 0, 0.1);
+        transition: all 0.15s ease-in-out;
+      }
+      path {
+        transition: all 0.15s ease-in-out;
+        fill: #807e7e;
+      }
+    }
+  }
 
   &__title {
     font-weight: bold;
     font-size: 24px;
     color: #000000;
-    margin-bottom: 30px;
+
   }
   &__box {
     height: 100%;
