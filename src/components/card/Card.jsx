@@ -1,13 +1,13 @@
 import React from "react";
-import "./Card.scss";
+import styles from  "./Card.module.scss";
 
 const Card = (props) => {
   console.log(props)
   return (
     <>
-      <div className="collection__item">
-        <div className="collection__item-wrapper">
-          <button className="collection__heart-btn">
+      <div className={styles.collection__item}>
+        <div className={styles.collection__item_wrapper}>
+          <button className={styles.collection__heart_btn}>
             <svg
               width="32"
               height="32"
@@ -24,16 +24,16 @@ const Card = (props) => {
           </button>
           <img
               src={props.url}
-              className="collection__sneakers"
+              className={styles.collection__sneakers}
               alt="sneakers"
           />
-          <p className="collection__product">{props.name}</p>
-          <div className="collection__product-bottom">
+          <p className={styles.collection__product}>{props.name}</p>
+          <div className={styles.collection__product_bottom}>
             <div>
-              <p className="collection__price">Цена</p>
-              <span className="collection__count">{props.price} руб.</span>
+              <p className={styles.collection__price}>Цена</p>
+              <span className={styles.collection__count}>{props.price} руб.</span>
             </div>
-            <button className="collection__add-btn">
+            <button className={styles.collection__add_btn}>
               <svg
                 width="32"
                 height="32"

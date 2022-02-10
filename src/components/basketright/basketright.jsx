@@ -1,31 +1,31 @@
 import React from "react";
-import './basketright.scss';
+import styles from './basketright.module.scss';
 import {default as sneakers } from './../../img/collection/1.jpg'
-
+import main from './../../App.module.scss'
 
 const BasketRight = () => {
 	return (
-    <div className="basket">
-      <div className="basket__overlay">
-        <div className="basket__drawer">
-          <h2 className="basket__title">Корзина</h2>
-          <div className="basket__box">
-            <div className="basket__item">
+    <div className={styles.basket}>
+      <div className={styles.basket__overlay}>
+        <div className={styles.basket__drawer}>
+          <h2 className={styles.basket__title}>Корзина</h2>
+          <div className={styles.basket__box}>
+            <div className={styles.basket__item}>
               <img
                 width={70}
                 height={70}
-                className="basket__item-img"
+                className={styles.basket__item_img}
                 alt="sneakers img"
                 src={sneakers}
               />
-              <div className="basket__item-text">
-                <p className="basket__item-description">
+              <div className={styles.basket__item_text}>
+                <p className={styles.basket__item_description}>
                   Мужские Кроссовки Nike Air Max 270
                 </p>
-                <span className="basket__item-price">12 999 руб.</span>
+                <span className={styles.basket__item_price}>12 999 руб.</span>
               </div>
               <svg
-                className="basket__item-clouse"
+                className={styles.basket__item_clouse}
                 width="32"
                 height="32"
                 viewBox="0 0 32 32"
@@ -49,21 +49,21 @@ const BasketRight = () => {
             </div>
           </div>
 
-          <div className="basket__bottom">
-            <div className="basket__bottom-total">
-              <span className="basket__bottom-character">Итого:</span>
-              <span className="basket__bottom-dashed"></span>
-              <p className="basket__bottom-price">21 498 руб.</p>
+          <div className={styles.basket__bottom}>
+            <div className={styles.basket__bottom_total}>
+              <span className={styles.basket__bottom_character}>Итого:</span>
+              <span className={styles.basket__bottom_dashed}></span>
+              <p className={styles.basket__bottom_price}>21 498 руб.</p>
             </div>
-            <div className="basket__bottom-total">
-              <span className="basket__bottom-character">Налог 5%:</span>
-              <span className="basket__bottom-dashed"></span>
-              <p className="basket__bottom-price">1074 руб.</p>
+            <div className={styles.basket__bottom_total}>
+              <span className={styles.basket__bottom_character}>Налог 5%:</span>
+              <span className={styles.basket__bottom_dashed}></span>
+              <p className={styles.basket__bottom_price}>1074 руб.</p>
             </div>
-            <button className="basket__button mainBtn">
+            <button className={`${styles.basket__button} ${main.mainBtn}`}>
               Оформить заказ
               <svg
-                className="basket__button-arrow"
+                className={styles.basket__button_arrow}
                 width="16"
                 height="14"
                 viewBox="0 0 16 14"

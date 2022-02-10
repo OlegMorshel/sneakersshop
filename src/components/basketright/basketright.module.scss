@@ -47,25 +47,25 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    &-img {
+    &_img {
       margin-right: 10px;
       position: relative;
       top: -5px;
     }
-    &-text {
+    &_text {
       width: 100%;
       line-height: 100%;
       margin-right: 10px;
     }
-    &-description {
+    &_description {
       margin-bottom: 8px;
       text-align: left;
     }
-    &-price {
+    &_price {
       font-weight: 700;
     }
 
-    &-clouse {
+    &_clouse {
       cursor: pointer;
       transition: all 0.15s ease-in-out;
       &:hover {
@@ -88,7 +88,7 @@
 
     &:hover {
       cursor: pointer;
-      .basket__button-arrow {
+      .basket__button_arrow {
         right: 30px;
         transition: all 0.2s ease-in-out;
       }
@@ -99,26 +99,26 @@
       background: #7eaa48;
       transition: all 0.2s ease-in-out;
     }
-    &-arrow {
+    &_arrow {
       position: absolute;
       right: 40px;
       top: 21px;
     }
   }
-  &__bottom-total {
+  &__bottom_total {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
-  &__bottom-character {
+  &__bottom_character {
     font-size: 16px;
     margin-right: 10px;
     float: left;
     margin-right: auto;
   }
 
-  &__bottom-dashed {
+  &__bottom_dashed {
     flex: 1;
     border-bottom: 1px dashed grey;
     margin: 0 10px;
@@ -126,10 +126,10 @@
     top: 6px;
   }
 
-  &__bottom-price {
+  &__bottom_price {
     font-size: 16px;
     font-weight: bold;
     margin-left: auto;
-    align-items: left;
+    align-items:flex-start;
   }
 }

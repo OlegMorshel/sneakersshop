@@ -20,7 +20,7 @@
       transform: translateY(-5px);
     }
   }
-  &__heart-btn {
+  &__heart_btn {
     position: absolute;
     top: 30px;
     left: 30px;
@@ -41,7 +41,7 @@
     margin-bottom: 15px;
   }
 
-  &__product-bottom {
+  &__product_bottom {
     display: flex;
     justify-content: space-between;
   }
@@ -54,7 +54,7 @@
   &__count {
     font-weight: bold;
   }
-  &__add-btn {
+  &__add_btn {
     border: none;
     background: #ffffff;
     border-radius: 8px;

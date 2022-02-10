@@ -1,5 +1,5 @@
 import React from "react";
-import "./collections.scss";
+import styles from "./collections.module.scss";
 import { default as search } from "./../../img/collection/search.svg";
 import Card from "../card/Card";
 import {default as image1} from './../../img/collection/1.jpg';
@@ -39,19 +39,19 @@ const sneakers = [
 const Collections = () => {
   return (
     <>
-      <div className="collection">
-        <div className="collection__top">
-          <h3 className="collection__title">Все кросовки</h3>
-          <div className="collection__search-block">
-            <img className="collection__search-btn" src={search} alt="search" />
+      <div className={styles.collection}>
+        <div className={styles.collection__top}>
+          <h3 className={styles.collection__title}>Все кросовки</h3>
+          <div className={styles.collection__search_block}>
+            <img className={styles.collection__search_btn} src={search} alt="search" />
             <input
-              className="collection__search-input"
+              className={styles.collection__search_input}
               type="search"
               placeholder="Поиск..."
             />
           </div>
         </div>
-        <div className="collection__wrapper">
+        <div className={styles.collection__wrapper}>
           {sneakers.map((el, index) => (
             <Card
               url={el.url}
