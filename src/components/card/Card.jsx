@@ -2,6 +2,7 @@ import React from "react";
 import "./Card.scss";
 
 const Card = (props) => {
+  console.log(props)
   return (
     <>
       <div className="collection__item">
@@ -22,8 +23,9 @@ const Card = (props) => {
             </svg>
           </button>
           <img
-            className="collection__sneakers"
-            alt="sneakers"
+              src={props.url}
+              className="collection__sneakers"
+              alt="sneakers"
           />
           <p className="collection__product">{props.name}</p>
           <div className="collection__product-bottom">

@@ -1,34 +1,36 @@
 import React from "react";
 import "./collections.scss";
 import { default as search } from "./../../img/collection/search.svg";
-import { default as jpg1 } from "./../../img/collection/1.jpg";
 import Card from "../card/Card";
+import {default as image1} from './../../img/collection/1.jpg';
+import {default as image2} from './../../img/collection/2.jpg';
+import {default as image3} from './../../img/collection/3.jpg';
+import {default as image4} from './../../img/collection/4.jpg';
+import {default as image5} from './../../img/collection/5.jpg';
 
 const sneakers = [
   {
-    img: {
-      image: { jpg1 },
-    },
+    url: image1,
     name: "Мужские Кроссовки Nike Blazer Mid Suede",
     price: "12 999",
   },
   {
-    url: "./../../img/collection/1.jpg",
+    url: image2,
     name: " Мужские Кроссовки Nike Blazer Mid Suede",
     price: "12 999",
   },
   {
-    url: "./../../img/collection/1.jpg",
+    url: image3,
     name: " Мужские Кроссовки Nike Blazer Mid Suede",
     price: "12 999",
   },
   {
-    url: "./../../img/collection/1.jpg",
+    url: image4,
     name: " Мужские Кроссовки Nike Blazer Mid Suede",
     price: "12 999",
   },
   {
-    url: "./../../img/collection/1.jpg",
+    url: image5,
     name: " Мужские Кроссовки Nike Blazer Mid Suede",
     price: "12 999",
   },
@@ -52,7 +54,7 @@ const Collections = () => {
         <div className="collection__wrapper">
           {sneakers.map((el, index) => (
             <Card
-              
+              url={el.url}
               name={el.name}
               price={el.price}
               key={index}
