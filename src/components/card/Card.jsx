@@ -1,17 +1,28 @@
 import React, {useState} from "react";
 import styles from  "./Card.module.scss";
 
-const Card = (props) => {
+const Card = ({url , title, price, id, onPlus, removeItemCart}) => {
+
   const [isAdded, setIsAdded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
   const checkedItem = () => {
     setIsAdded((!isAdded));
+
+    if(isAdded){
+        removeItemCart({url, title, price, id});
+    } else{
+        onPlus({url, title, price, id});
+      }
+
   }
 
   const likedItem = () => {
     setIsLiked(!isLiked);
   }
+
+
+
   return (
     <>
       <div className={styles.collection__item}>
@@ -37,19 +48,21 @@ const Card = (props) => {
             </svg>}
           </button>
           <img
-              src={props.url}
+              src={url}
               className={styles.collection__sneakers}
               alt="sneakers"
           />
-          <p className={styles.collection__product}>{props.name}</p>
+          <p className={styles.collection__product}>{title}</p>
           <div className={styles.collection__product_bottom}>
             <div>
               <p className={styles.collection__price}>Цена</p>
-              <span className={styles.collection__count}>{props.price} руб.</span>
+              <span className={styles.collection__count}>{price} руб.</span>
             </div>
-            <button className={styles.collection__add_btn} onClick={checkedItem}>
+
+
+            <button className={styles.collection__add_btn}  onClick={checkedItem} >
               {isAdded ?
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" rx="8" fill="url(#paint0_linear_60_200)"/>
                     <g clip-path="url(#clip0_60_200)">
                       <g filter="url(#filter0_d_60_200)">

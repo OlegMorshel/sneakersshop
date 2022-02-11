@@ -6,10 +6,8 @@ import Preloader from "../other/Preloader";
 
 
 
+const Collections = ({addItemDrawer, removeItemCart}) => {
 
-
-
-const Collections = () => {
 
   const [items, setItems] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
@@ -23,6 +21,18 @@ const Collections = () => {
 
     setIsFetching(false);
   }, [])
+
+
+  const addCartDrawer = ( obj ) => {
+    addItemDrawer(obj);
+  }
+
+  const removeItem = ( obj ) => {
+    removeItemCart(obj);
+  }
+
+
+
   return (
     <>
       <div className={styles.collection}>
@@ -42,12 +52,16 @@ const Collections = () => {
           {
             isFetching ? <Preloader/>
 
-            :items.map((el, index) => (
+            :
+                items.map((el) => (
                 <Card
               url={el.image}
-              name={el.title}
+              title={el.title}
               price={el.price}
-              key={index}
+              key={el.id}
+              id={el.id}
+              onPlus={ (obj) => addCartDrawer(obj)}
+              removeItemCart={ (obj) => removeItem( obj )}
             />
           ))}
         </div>

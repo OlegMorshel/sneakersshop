@@ -1,8 +1,9 @@
 import React from "react";
 import styles from './basketright.module.scss';
-import {default as sneakers } from './../../img/collection/1.jpg'
-import main from './../../App.module.scss'
-const BasketRight = ( props ) => {
+import main from './../../App.module.scss';
+
+const BasketRight = ({closeDrawer, cartItems = []}) => {
+
 	return (
     <div className={styles.basket}>
       <div className={styles.basket__overlay}>
@@ -10,7 +11,7 @@ const BasketRight = ( props ) => {
           <div className={styles.basket__top_wrapper}>
           <h2 className={styles.basket__title}>Корзина</h2>
             <svg
-                onClick={props.closeDrawer}
+                onClick={closeDrawer}
                 className={styles.basket__close_btn}
                 width="32"
                 height="32"
@@ -34,43 +35,55 @@ const BasketRight = ( props ) => {
             </svg>
           </div>
           <div className={styles.basket__box}>
-            <div className={styles.basket__item}>
-              <img
-                width={70}
-                height={70}
-                className={styles.basket__item_img}
-                alt="sneakers img"
-                src={sneakers}
-              />
-              <div className={styles.basket__item_text}>
-                <p className={styles.basket__item_description}>
-                  Мужские Кроссовки Nike Air Max 270
-                </p>
-                <span className={styles.basket__item_price}>12 999 руб.</span>
-              </div>
-              <svg
-                className={styles.basket__item_clouse}
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  y="0.5"
-                  width="31"
-                  height="31"
-                  rx="7.5"
-                  fill="white"
-                  stroke="#DBDBDB"
-                />
-                <path
-                  d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
-                  fill="#B5B5B5"
-                />
-              </svg>
-            </div>
+
+
+
+
+            {cartItems.map((item, index)=>(
+                <div className={styles.basket__item} key={index}>
+
+                  <img
+                      width={70}
+                      height={70}
+                      className={styles.basket__item_img}
+                      alt="sneakers img"
+                      src={item.url}
+                  />
+                  <div className={styles.basket__item_text}>
+                    <p className={styles.basket__item_description}>
+                      {item.title}
+                    </p>
+                    <span className={styles.basket__item_price}>{item.price} руб.</span>
+                  </div>
+                  <svg
+                      className={styles.basket__item_clouse}
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                        x="0.5"
+                        y="0.5"
+                        width="31"
+                        height="31"
+                        rx="7.5"
+                        fill="white"
+                        stroke="#DBDBDB"
+                    />
+                    <path
+                        d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                        fill="#B5B5B5"
+                    />
+                  </svg>
+                </div>
+
+            ))}
+
+
+
+
           </div>
 
           <div className={styles.basket__bottom}>
